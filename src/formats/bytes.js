@@ -46,8 +46,7 @@
             for (power = 0; power <= bytes.suffixes.length; power++) {
                 min = Math.pow(bytes.base, power);
                 max = Math.pow(bytes.base, power + 1);
-
-                if (value === null || value === 0 || value >= min && value < max) {
+                if (value === null || value === 0 || value < 1 || value >= min && value < max) {
                     suffix += bytes.suffixes[power];
 
                     if (min > 0) {
@@ -57,10 +56,11 @@
                     break;
                 }
             }
-
+            
             output = numeral._.numberToFormat(value, format, roundingFunction);
 
             return output + suffix;
+
         },
         unformat: function(string) {
             var value = numeral._.stringToNumber(string),

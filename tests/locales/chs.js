@@ -33,9 +33,9 @@ describe('Locale: chs', function() {
                 [52,'0o','52.'],
                 [23,'0o','23.'],
                 [100,'0o','100.'],
-                [1,'0[.]0','1']
+                [1,'0[.]0','1'],
+                
             ];
-
             for (var i = 0; i < tests.length; i++) {
                 expect(numeral(tests[i][0]).format(tests[i][1])).to.equal(tests[i][2]);
             }
